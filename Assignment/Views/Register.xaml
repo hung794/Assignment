@@ -1,0 +1,120 @@
+﻿<Page
+    x:Class="Assignment.Views.Register"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid FocusVisualPrimaryBrush="White" Margin="0,10,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="117*"/>
+            <RowDefinition Height="122*"/>
+            <RowDefinition Height="117*"/>
+            <RowDefinition Height="117*"/>
+            <RowDefinition Height="117*"/>
+            <RowDefinition Height="180*"/>
+            <RowDefinition Height="189*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="https://res.cloudinary.com/hung71294/image/upload/v1645092691/xdo0TE_dtcyhg.jpg" Opacity="0.8" AlignmentY="Top" AlignmentX="Center"/>
+        </Grid.Background>
+        <TextBlock HorizontalAlignment="Center" Text="Register" Margin="0,5,0,5" FontWeight="Bold" Foreground="Black" FontSize="45" Width="227" FontFamily="Imprint MT Shadow" FontStyle="Italic"/>
+        <StackPanel Margin="0,3,0,0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Height="91" Width="527">
+            <StackPanel Height="82">
+                <TextBlock Text="First Name" Foreground="Black" FontSize="14" FontWeight="Bold"/>
+                <TextBox Width="150" Height="32" x:Name="FirstName" FontSize="14" Background="White" CornerRadius="5" Padding="10,3,2,0" BorderBrush="#7F000000"/>
+                <TextBlock Text="" Name="FirstNameError" Foreground="Red" FontSize="13"/>
+            </StackPanel>
+            <StackPanel Height="82" Margin="20,0,0,0">
+                <TextBlock Text="Last Name" Foreground="Black" FontSize="14" FontWeight="Bold"/>
+                <TextBox Width="150" Height="32" x:Name="LastName" FontSize="14" Background="White" CornerRadius="5" Padding="10,3,2,2" BorderBrush="#7F000000"/>
+                <TextBlock Text="" Name="LastNameError" Foreground="Red" FontSize="13"/>
+            </StackPanel>
+            <StackPanel Height="82" Margin="20,0,0,0">
+                <TextBlock Text="Phone" Foreground="Black" FontSize="14" FontWeight="Bold"/>
+                <TextBox Width="150" Height="32" Name="Phone" FontSize="14" CornerRadius="5" Background="White" Padding="10,3,2,2" BorderBrush="#7F000000"/>
+                <TextBlock Text="" Name="PhoneError" Foreground="Red" FontSize="13"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,5,0,6" Width="527">
+            <StackPanel>
+                <TextBlock Text="Address" Foreground="Black" FontSize="14" FontWeight="Bold"/>
+                <TextBox Width="320" CornerRadius="5" Name="Address" Height="32" Background="White" FontSize="14" HorizontalAlignment="Left" Padding="10,4,2,2" BorderBrush="#7F000000"/>
+                <TextBlock Text="" Name="AddressError" Foreground="Red" FontSize="13"/>
+            </StackPanel>
+            <StackPanel Margin="20,0,0,0">
+                <TextBlock Text="Birthday" Foreground="Black" FontSize="14" FontWeight="Bold"/>
+                <CalendarDatePicker Width="150" Name="Birthday" Background="White" CornerRadius="5" Height="32" FontSize="14" Padding="10,4,2,2" BorderBrush="#7B000000"/>
+                <TextBlock Text="" Name="BirthdayError" Foreground="Red" FontSize="13"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="3" HorizontalAlignment="Center" Margin="0,5,0,0" Width="527">
+            <TextBlock Text="Gender" Foreground="Black" FontWeight="Bold" FontSize="14"/>
+            <StackPanel Orientation="Horizontal">
+                <RadioButton Foreground="Black"  Name="Male" Content="Male" FontSize="15" FocusVisualPrimaryBrush="White" IsChecked="True" BorderBrush="White" FocusVisualSecondaryBrush="White" Background="{x:Null}" Checked="RadioButton_Checked"/>
+                <RadioButton Foreground="Black" Name="Female" Content="Female" FontSize="15" Checked="RadioButton_Checked"/>
+                <RadioButton Foreground="Black" Name="Other" Content="Other" FontSize="15" Checked="RadioButton_Checked"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="4" HorizontalAlignment="Center" Orientation="Horizontal" Width="527">
+            <StackPanel>
+                <TextBlock Text="Email" Foreground="Black" FontSize="14" FontWeight="Bold"/>
+                <TextBox Width="232" CornerRadius="5" Name="Email" Background="White" Height="32" FontSize="14" HorizontalAlignment="Left" Padding="10,4,2,2" BorderBrush="#7F000000"/>
+                <TextBlock Text="" Name="EmailError" Foreground="Red" FontSize="13"/>
+            </StackPanel>
+            <StackPanel Margin="25,0,0,0">
+                <TextBlock Text="Password" Foreground="Black" FontSize="14" FontWeight="Bold"/>
+                <PasswordBox Width="232" CornerRadius="5" Name="Password" Background="White" Height="32" FontSize="14" HorizontalAlignment="Left" Padding="10,4,2,2" BorderBrush="#7F000000"/>
+                <TextBlock Text="" Name="PasswordError" Foreground="Red" FontSize="13"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="5" HorizontalAlignment="Center" Margin="0,5,0,0" Width="527" Grid.RowSpan="2">
+            <TextBlock Text="Avatar" Foreground="Black" FontSize="14" FontWeight="Bold"/>
+            <StackPanel Orientation="Horizontal">
+                <Button FontSize="14" Content="Choose Image" Foreground="White" Click="AddImage_Click" Width="150" CornerRadius="5" Background="DarkCyan" FontWeight="Bold"/>
+                <TextBlock Text="" Name="AddImageSuccessText" FontSize="20" Foreground="Green" Margin="20,0,0,5"/>
+            </StackPanel>
+            <TextBlock Text="" Name="AvatarError" Foreground="Red" FontSize="13"/>
+        </StackPanel>
+        <StackPanel Grid.Row="6" HorizontalAlignment="Center" Margin="0,10,0,0" Width="527" Grid.RowSpan="2">
+            <TextBlock Text="Introduction" Foreground="Black" FontSize="14" FontWeight="Bold"/>
+            <TextBox Width="490" CornerRadius="5" Height="70" Background="White" Name="Introduction" TextWrapping="Wrap" AcceptsReturn="True" FontSize="15" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Grid.Row="6" VerticalAlignment="Top" HorizontalAlignment="Center" Width="335" Margin="0,140,0,0" Height="84" Grid.RowSpan="2">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Register" HorizontalAlignment="Center" Foreground="White" Background="Blue" FontWeight="Bold" FontSize="20" Width="150" CornerRadius="5" Padding="2,2,2,6" BorderThickness="0,2,0,0" Click="Register_Click">
+                    <Button.Resources>
+                        <ResourceDictionary>
+                            <ResourceDictionary.ThemeDictionaries>
+                                <ResourceDictionary x:Key="Light">
+                                    <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="Blue"/>
+                                </ResourceDictionary>
+                            </ResourceDictionary.ThemeDictionaries>
+                        </ResourceDictionary>
+                    </Button.Resources>
+                </Button>
+                <Button Content="Reset" Foreground="White" Background="Black" FontWeight="Bold" FontSize="20" Width="150" Click="Reset_Click" CornerRadius="5" Margin="30,0,0,0" Padding="2,2,2,6" BorderThickness="0,2,0,0">
+                    <Button.Resources>
+                        <ResourceDictionary>
+                            <ResourceDictionary.ThemeDictionaries>
+                                <ResourceDictionary x:Key="Light">
+                                    <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="Black"/>
+                                </ResourceDictionary>
+                            </ResourceDictionary.ThemeDictionaries>
+                        </ResourceDictionary>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+            <TextBlock HorizontalAlignment="Center" FontSize="20" Margin="0,10,0,0">
+                <Hyperlink Click="LoginForm_Click" Foreground="Black">
+                    I Already Have An Account
+                </Hyperlink>
+            </TextBlock>
+        </StackPanel>
+        <ContentDialog Title="Register Result" Name="Dialog" CloseButtonText="Back" PrimaryButtonText="Go To Login Page" PrimaryButtonClick="ContentDialog_PrimaryButtonClick"/>
+    </Grid>
+</Page>

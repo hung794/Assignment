@@ -1,0 +1,92 @@
+﻿<Page
+    x:Class="Assignment.Views.MainAccount.AddSong"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Assignment.Views.MainAccount"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="https://res.cloudinary.com/hung71294/image/upload/v1645095964/WrLQyF_ndjij7.jpg" Opacity="0.5" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <StackPanel HorizontalAlignment="Center">
+            <TextBlock Text="Add Song" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,30"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Name" FontWeight="Bold" FontSize="20" Margin="0,4,0,0"/>
+                <StackPanel>
+                    <TextBox Margin="67,0,0,0" Width="300" FontSize="20" Name="Name"></TextBox>
+                    <TextBlock Text="" FontSize="15" Margin="66,0,0,0" Name="NameError" Foreground="Red"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <TextBlock Text="Description" FontWeight="Bold" FontSize="20" Margin="0,4,0,0"/>
+                <StackPanel>
+                    <TextBox Margin="15,0,0,0" Width="300" FontSize="20" Name="Description" TextWrapping="Wrap" AcceptsReturn="True" Height="100"/>
+                    <TextBlock Text="" FontSize="15" Margin="20,0,0,0" Name="DescriptionError" Foreground="Red"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <TextBlock Text="Singer" FontWeight="Bold" FontSize="20" Margin="0,4,0,0"/>
+                <StackPanel>
+                    <TextBox Margin="63,0,0,0" Width="300" FontSize="20" Name="Singer"/>
+                    <TextBlock Text="" FontSize="15" Name="SingerError" Margin="64,0,0,0" Foreground="Red"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <TextBlock Text="Author" FontWeight="Bold" FontSize="20" Margin="0,4,0,0"/>
+                <StackPanel>
+                    <TextBox Margin="57,0,0,0" Width="300" Name="Author" FontSize="20"/>
+                    <TextBlock Text="" FontSize="15" Name="AuthorError" Margin="60,0,0,0" Foreground="Red"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,18,0,0">
+                <TextBlock Text="Thumbnail" FontWeight="Bold" FontSize="20" Margin="0,4,0,0"/> 
+                <StackPanel>
+                    <Button Margin="25,0,0,0" Width="200" Foreground="White" Background="DarkCyan" Padding="2,2,2,6" Click="ChooseImage_Click" CornerRadius="5"  Content="Choose Image"  FontSize="20"/>
+                    <TextBlock Text="" FontSize="15" Name="ThumbnailError" Margin="28,0,0,0" Foreground="Red"/>
+                </StackPanel>
+                <TextBlock Text="" Name="AddImgSuccessText" FontSize="20" Foreground="Green" Margin="20,4,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <TextBlock Text="Link" FontWeight="Bold" FontSize="20" Margin="0,4,0,0"/>
+                <StackPanel>
+                    <Button Margin="87,0,0,0" Width="200" Foreground="White" Background="DarkCyan" Padding="2,2,2,6" Click="ChooseSong_Click" CornerRadius="5"  Content="Choose Music"  FontSize="20"/>
+                    <TextBlock Text="" FontSize="15" Name="LinkError" Margin="85,0,0,0" Foreground="Red"/>
+                </StackPanel>
+                <TextBlock Text="" Name="AddMusicSuccessText" FontSize="20" Foreground="Green" Margin="20,4,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="40,30,0,0">
+                <Button Content="Add Song" HorizontalAlignment="Center" Click="AddSong_Click" Foreground="White" Background="Blue" FontWeight="Bold" FontSize="20" Width="150" CornerRadius="5" Padding="2,2,2,6" BorderThickness="0,2,0,0" >
+                    <Button.Resources>
+                        <ResourceDictionary>
+                            <ResourceDictionary.ThemeDictionaries>
+                                <ResourceDictionary x:Key="Light">
+                                    <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="Blue"/>
+                                </ResourceDictionary>
+                            </ResourceDictionary.ThemeDictionaries>
+                        </ResourceDictionary>
+                    </Button.Resources>
+                </Button>
+                <Button Content="Reset" Foreground="White" Background="Black" Click="Reset_Click" FontWeight="Bold" FontSize="20" Width="150" CornerRadius="5" Margin="30,0,0,0" Padding="2,2,2,6" BorderThickness="0,2,0,0">
+                    <Button.Resources>
+                        <ResourceDictionary>
+                            <ResourceDictionary.ThemeDictionaries>
+                                <ResourceDictionary x:Key="Light">
+                                    <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="Black"/>
+                                </ResourceDictionary>
+                            </ResourceDictionary.ThemeDictionaries>
+                        </ResourceDictionary>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <ContentDialog Title="Add Song Result" Name="Dialog" Content="" CloseButtonText="Back" PrimaryButtonText="Go To My Song"
+                       PrimaryButtonClick="Dialog_PrimaryButtonClick"/>
+        <ProgressRing Width="100" Height="100" Name="Process" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </Grid>
+</Page>
